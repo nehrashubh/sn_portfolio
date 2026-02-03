@@ -1,17 +1,95 @@
 ---
-
+import Layout from '../layouts/layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <div class="home-container">
+    <section class="intro">
+      <h1>hi, im <span class="highlight">shubhankar.</span></h1>
+      <p>
+        developer and security enthusiast. i love building labs and breaking them. 
+        currently focussing on attacking and securing systems. you can find write-ups
+		for most of my work here, and my projects on <a class="icy" href="https://github.com/nehrashubh">github</a>.
+      </p>
+    </section>
+
+    <section class="home-section">
+      <div class="section-divider">
+        <span>/featured_work</span>
+        <hr />
+      </div>
+
+      <div class="list-item">
+        <a href="/projects/ad-homelab" class="item-title">ad security homelab</a>
+        <p class="item-desc">a windows environment (server + victim machine) for testing GPO hardening and red-team attacks.</p>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-divider">
+        <span>/recent_writing</span>
+        <hr />
+      </div>
+
+      <div class="list-item">
+        <a href="/blog" class="item-title">gpo hardening strategies</a>
+        <p class="item-desc">my research and demonstration of hardening a vulnerable ad environment.</p>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .home-container { margin-top: 10vh; }
+  
+  h1 { font-weight: 300; font-size: 2.2rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); font-weight: 600; }
+  .icy { color: var(--accent); }
+
+  p { line-height: 1.7; color: var(--text-dim); max-width: 600px; }
+
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 4rem 0 2rem 0;
+  }
+  .section-divider span {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    opacity: 0.4;
+  }
+  .section-divider hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid rgba(225, 232, 237, 0.1);
+  }
+
+  .list-item { margin-bottom: 2rem; }
+  .item-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+  .item-title:hover { opacity: 0.7; }
+  .item-desc { font-size: 0.85rem; margin-top: 4px; opacity: 0.8; }
+
+  .button-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .placeholder-button {
+    width: 88px; height: 31px;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  .footer-note { font-size: 0.8rem; margin-top: 4rem; opacity: 0.5; }
+  .footer-note a { color: var(--accent); text-decoration: none; border-bottom: 1px solid; }
+</style>
