@@ -1,5 +1,5 @@
 ---
-const { title = "Portfolio" } = Astro.props;
+const { title = "shubhankar's site" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -8,6 +8,7 @@ const { title = "Portfolio" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <style is:global>
         :root {
             --bg: #05070a;
@@ -20,6 +21,9 @@ const { title = "Portfolio" } = Astro.props;
             color: var(--accent);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         nav {
             display: flex;
@@ -36,16 +40,19 @@ const { title = "Portfolio" } = Astro.props;
             letter-spacing: 0.1rem;
             text-transform: uppercase;
             opacity: 0.5;
-            transition: 0.3s ease;
+            transition: 0.2s ease;
         }
-        nav a:hover { opacity: 1; text-shadow: 0 0 10px var(--accent); }
+        nav a:hover { opacity: 1; text-shadow: 0 0 1px var(--accent); }
         
         main {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
             position: relative;
             z-index: 5;
+
+            flex: 1;
+            width: 100%;
         }
 
         #starfield {
@@ -137,7 +144,7 @@ const { title = "Portfolio" } = Astro.props;
                 result += chars.charAt(Math.floor(Math.random() * chars.length));
             }
             htmlEl.innerText = result;
-            }, 50);
+            }, 40); // speed (higher number = slower)
         });
         }
 
@@ -147,15 +154,39 @@ const { title = "Portfolio" } = Astro.props;
     <script is:inline src="/oneko.js"></script>
     <script is:inline>
         // oneko cat script
-      window.addEventListener('load', () => {
-        if (typeof oneko !== 'undefined') {
-            oneko();
-        }
-        const cat = document.getElementById('oneko');
-        if (cat) {
-            cat.style.backgroundImage = "url('/oneko.gif')";
-        }
-      });
+        window.addEventListener('load', () => {
+            if (typeof oneko !== 'undefined') {
+                oneko();
+            }
+            const cat = document.getElementById('oneko');
+            if (cat) {
+                cat.style.backgroundImage = "url('/oneko.gif')";
+            }
+        });
     </script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span class="copyright">© {new Date().getFullYear()} Shubhankar Nehra</span>
+        </div>
+    </footer>
+
+    <style>
+        .site-footer {
+            padding: 3rem 0 2rem;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            display: flex;
+            gap: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            opacity: 0.3;
+        }
+    </style>
 </body>
 </html>

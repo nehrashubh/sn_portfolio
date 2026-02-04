@@ -2,13 +2,13 @@
 import Layout from '../layouts/layout.astro';
 const posts = await Astro.glob('./blog/*.md');
 
-// Sort posts by date (newest first)
+// sort posts by date
 const sortedPosts = posts.sort((a, b) => 
   new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
 );
 ---
 
-<Layout title="Blog">
+<Layout title="blog - shubhankar's site">
   <section class="blog-wrapper">
     <div class="post-list">
       {sortedPosts.map((post) => (
@@ -38,9 +38,9 @@ const sortedPosts = posts.sort((a, b) =>
       gap: 20px;
       text-decoration: none;
       color: var(--text-dim);
-      padding: 1.0rem 0;
+      padding: 0.67rem 0;
       border-bottom: 1px solid rgba(225, 232, 237, 0.05);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
 
     .post-item:last-child {

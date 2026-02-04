@@ -2,28 +2,32 @@
 import Layout from '../layouts/layout.astro';
 ---
 
-<Layout title="Contact">
+<Layout title="contact - shubhankar's site">
   <section class="contact-wrapper">
     <header class="page-header">
-      <p>Reach out for collaborations, security talk, or just to say hi.</p>
+      <p>reach out for collaborations, security talk, or just to say hi.
+        learning about pgp keys and secure communication methods, so will
+        share those here once i get the hang of them. for now, you can
+        find me on the platforms below.
+      </p>
     </header>
 
     <div class="contact-grid">
       <div class="links-section">
         <div class="contact-item">
-            <span class="label">Gmail</span>
+            <span class="label">gmail</span>
             <a href="mailto:nehrashubh6@gmail.com" class="value">nehrashubh6@gmail.com</a>
         </div>
         <div class="contact-item">
-            <span class="label">Linkedin</span>
+            <span class="label">linkedin</span>
             <a href="https://linkedin.com/in/nehrashubh" class="value">Shubhankar Nehra</a>
         </div>
         <div class="contact-item">
-            <span class="label">GitHub</span>
+            <span class="label">github</span>
             <a href="https://github.com/nehrashubh" target="_blank" class="value">github.com/nehrashubh</a>
         </div>
         <div class="contact-item">
-            <span class="label">Discord</span>
+            <span class="label">discord</span>
             <span class="value">sleepylegs.</span>
         </div>
       </div>
@@ -37,17 +41,10 @@ import Layout from '../layouts/layout.astro';
     }
 
     .page-header { margin-bottom: 4rem; }
-    
-    h2 { 
-      font-weight: 300; 
-      font-size: 1.5rem; 
-      margin-bottom: 0.5rem;
-      color: var(--accent);
-    }
 
     .page-header p {
       color: var(--text-dim);
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .contact-grid {
@@ -56,7 +53,6 @@ import Layout from '../layouts/layout.astro';
       gap: 5rem;
     }
 
-    /* Links Styles */
     .links-section {
       display: flex;
       flex-direction: column;
@@ -72,7 +68,6 @@ import Layout from '../layouts/layout.astro';
     .label {
       font-family: monospace;
       font-size: 0.7rem;
-      text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--accent);
       opacity: 0.4;
@@ -89,7 +84,6 @@ import Layout from '../layouts/layout.astro';
       opacity: 0.7;
     }
 
-    /* 88x31 Button Grid */
     .section-title {
       font-family: monospace;
       font-size: 0.8rem;
