@@ -78,7 +78,7 @@ const { title = "Portfolio" } = Astro.props;
     </main>
 
     <script is:inline>
-        // --- 3D STARFIELD LOGIC ---
+        // star background logic
         const canvas = document.getElementById('starfield');
         const ctx = canvas.getContext('2d');
         let stars = [];
@@ -121,8 +121,32 @@ const { title = "Portfolio" } = Astro.props;
         animate();
     </script>
 
+    <script>
+    // obfuscate text script
+    function obfuscate() {
+        const elements = document.querySelectorAll('.magic');
+        const chars = "¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
+        
+        elements.forEach(el => {
+            const htmlEl = el as HTMLElement; 
+            const len = htmlEl.innerText.length;
+            
+            setInterval(() => {
+            let result = '';
+            for (let i = 0; i < len; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            htmlEl.innerText = result;
+            }, 50);
+        });
+        }
+
+        window.addEventListener('load', obfuscate);
+    </script>
+
     <script is:inline src="/oneko.js"></script>
     <script is:inline>
+        // oneko cat script
       window.addEventListener('load', () => {
         if (typeof oneko !== 'undefined') {
             oneko();

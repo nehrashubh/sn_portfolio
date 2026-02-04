@@ -10,11 +10,11 @@ import Layout from '../layouts/layout.astro';
     </div>
     
     <div class="coordinates">
-        <span>LAT: ERROR</span>
-        <span>LONG: NOT_FOUND</span>
+        <span>LAT:</span><span class="magic">NOT_FOUND</span>
+        <span>LONG:</span><span class="magic">NOT_FOUND</span>
     </div>
 
-    <a href="/" class="back-home">_Return_to_Station</a>
+    <a href="/" class="back-home">return home</a>
   </section>
 </Layout>
 
@@ -57,7 +57,6 @@ import Layout from '../layouts/layout.astro';
     border: 1px solid rgba(225, 232, 237, 0.2);
     padding: 10px 20px;
     font-size: 0.8rem;
-    text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.3s;
   }
