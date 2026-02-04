@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/layout.astro';
+---
+
+<Layout title="404: Lost in Space">
+  <section class="error-container">
+    <div class="glitch-wrapper">
+      <h1 class="error-code">404</h1>
+      <p class="error-msg">You've drifted too far into the void.</p>
+    </div>
+    
+    <div class="coordinates">
+        <span>LAT: ERROR</span>
+        <span>LONG: NOT_FOUND</span>
+    </div>
+
+    <a href="/" class="back-home">_Return_to_Station</a>
+  </section>
+</Layout>
+
+<style>
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+  }
+
+  .error-code {
+    font-size: 5rem;
+    font-weight: 200;
+    margin: 0;
+    color: var(--accent);
+    letter-spacing: -2px;
+  }
+
+  .error-msg {
+    color: var(--text-dim);
+    font-family: monospace;
+    margin-bottom: 2rem;
+  }
+
+  .coordinates {
+    font-family: monospace;
+    font-size: 0.7rem;
+    opacity: 0.3;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 3rem;
+  }
+
+  .back-home {
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid rgba(225, 232, 237, 0.2);
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+  }
+
+  .back-home:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+</style>
